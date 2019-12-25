@@ -14,8 +14,12 @@ class _ProductState extends State<Product> {
   @override
   void initState() {
     super.initState();
+    printUOMs();
+  }
+
+  printUOMs() async {
     print('getting');
-    KeycloakService.login('spiceindia', 'spiceindia');
+    await KeycloakService.login('spiceindia', 'spiceindia');
     QueryService().findUOMByIdpCode('spiceindia').then((uoms) {
       uoms.forEach((uom){
         print(uom.unit);
