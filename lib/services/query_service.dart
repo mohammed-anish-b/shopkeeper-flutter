@@ -12,8 +12,8 @@ class QueryService {
   String url = 'http://dev.ci1.divisosofttech.com:9080';
 
   Future<List<UOM>> findUOMByIdpCode(String idpcode) async {
-    KeycloakService.login('spiceindia', 'spiceindia');
-    dynamic response = await http.get(url+'/api/query/findUOMByIdpCode/$idpcode',headers: KeycloakService.tokenHeaders);
+    KeycloakService().login('spiceindia', 'spiceindia');
+    dynamic response = await http.get(url+'/api/query/findUOMByIdpCode/$idpcode',headers: KeycloakService().tokenHeaders);
     Map page = jsonDecode(response.body);
     var list = page['content'] as List;
     List<UOM> uoms = list.map((i) => UOM.fromJSON(i)).toList();  

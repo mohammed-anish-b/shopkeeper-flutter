@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopkeeper/pages/home.dart';
+import 'package:shopkeeper/pages/login.dart';
 import 'package:shopkeeper/pages/product.dart';
 import 'package:shopkeeper/pages/signup.dart';
 
@@ -8,6 +9,7 @@ void main() => runApp(MaterialApp(
   routes: {
     '/' : (context) => Home(),
     '/product' : (context) => Product(),
-    '/signup' : (context) => Signup()
+    '/signup' : (context) => Signup(),
+    '/login' : (context) => Login()
   },
 ));

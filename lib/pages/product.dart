@@ -19,7 +19,7 @@ class _ProductState extends State<Product> {
 
   printUOMs() async {
     print('getting');
-    await KeycloakService.login('spiceindia', 'spiceindia');
+    await KeycloakService().login('spiceindia', 'spiceindia');
     QueryService().findUOMByIdpCode('spiceindia').then((uoms) {
       uoms.forEach((uom){
         print(uom.unit);
